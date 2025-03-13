@@ -9,7 +9,7 @@ This project implements a facial recognition-based authentication system using A
 ## Architecture Overview
 
 <center>
-  <img src="Arquitecture.png" alt="App Rekognition" width="600">
+  <img src="https://github.com/CCOcampo/CloudFace_ID_AWS/blob/master/resource/Arquitecture.png" alt="App Rekognition" width="600">
 </center>
 
 The system consists of the following components:
