@@ -1,0 +1,6 @@
+.terraform/
+.terraform.lock.hcl
+employee_authen.py
+employee_regis.py
+terraform.tfstate
+terraform.tfstate.backup

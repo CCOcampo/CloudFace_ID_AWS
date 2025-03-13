@@ -1,0 +1,243 @@
+.App {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  color: #666;
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: #00ff9d;
+  z-index: 5;
+}
+
+.top-left {
+  top: 10px;
+  left: 10px;
+  border-top: 3px solid;
+  border-left: 3px solid;
+}
+
+.top-right {
+  top: 10px;
+  right: 10px;
+  border-top: 3px solid;
+  border-right: 3px solid;
+}
+
+.bottom-left {
+  bottom: 10px;
+  left: 10px;
+  border-bottom: 3px solid;
+  border-left: 3px solid;
+}
+
+.bottom-right {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 3px solid;
+  border-right: 3px solid;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.message-box {
+  margin: 15px 0;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: 80%;
+}
+
+.success {
+  background-color: rgba(0, 200, 83, 0.2);
+  color: #00a854;
+  border: 1px solid rgba(0, 200, 83, 0.3);
+}
+
+.failure {
+  background-color: rgba(255, 76, 76, 0.2);
+  color: #ff4c4c;
+  border: 1px solid rgba(255, 76, 76, 0.3);
+}
+
+.auth-button {
+  margin: 15px 0;
+  padding: 14px 40px;
+  background: linear-gradient(45deg, #1e3c72, #2a5298);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(30, 60, 114, 0.4);
+  outline: none;
+}
+
+.auth-button:hover {
+  background: linear-gradient(45deg, #24468a, #315db5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 60, 114, 0.5);
+}
+
+.auth-button:active {
+  transform: translateY(1px);
+}
+
+.auth-button.loading {
+  background: #8ca3d8;
+  cursor: not-allowed;
+}
+
+.access-granted {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.checkmark {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00c853;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  animation: scaleIn 0.3s ease-out;
+}
+
+.scanning-animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.scan-line {
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 255, 157, 0),
+    rgba(0, 255, 157, 0.8) 50%,
+    rgba(0, 255, 157, 0)
+  );
+  animation: scan 2s linear infinite;
+  box-shadow: 0 0 8px rgba(0, 255, 157, 0.5);
+}
+
+@keyframes scan {
+  0% {
+    top: -10px;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .auth-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .video-frame {
+    height: 250px;
+  }
+}
