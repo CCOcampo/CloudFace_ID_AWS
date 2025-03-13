@@ -3,7 +3,7 @@
 This project implements a facial recognition-based authentication system using AWS services. The system processes images uploaded by visitors, verifies identities using Amazon Rekognition, and provides authentication results via an API Gateway.
 
 <center>
-  <img src="app_rekog.png" alt="App Rekognition" width="500">
+  <img src="https://github.com/CCOcampo/CloudFace_ID_AWS/blob/master/resource/app_rekog.png" alt="App Rekognition" width="500">
 </center>
 
 ## Architecture Overview
@@ -157,7 +157,7 @@ The frontend application interacts with the API Gateway to:
 If you prefer to work with static images instead of the live camera, you can easily modify the project to support this.
 
 <center>
-  <img src="images_rekog.png" alt="App Rekognition" width="500">
+  <img src="https://github.com/CCOcampo/CloudFace_ID_AWS/blob/master/resource/images_rekog.png" alt="App Rekognition" width="500">
 </center>
 
 #### How to Switch to Image-Based Recognition
